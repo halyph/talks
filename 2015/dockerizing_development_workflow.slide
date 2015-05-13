@@ -1,0 +1,18 @@
+Dockerizing development workflow
+ITRally
+16 May 2015
+Tags: docker
+
+Orest Ivasiv
+Software engineer, Softserve
+Docker hobbyist
+halyph@gmail.com
+http://halyph.com
+@halyph
+
+* Outline
+1. What is Docker?
+2. Internals of Docker
+3. Docker basic commands
+4. Composer 
+5. Sample usage
