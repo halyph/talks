@@ -1,0 +1,2 @@
+$ sudo docker run -t -i ubuntu:14.04 /bin/bash
+root@af8bae53bdd3:/#

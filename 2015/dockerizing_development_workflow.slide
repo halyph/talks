@@ -16,3 +16,66 @@ http://halyph.com
 3. Docker basic commands
 4. Composer 
 5. Sample usage
+
+* What is Docker? 
+
+* Docker is
+Docker is an open source platform to automate development cycle of applications inside software containers.
+
+#Docker implements a high-level API to provide lightweight containers that run processes in isolation.  Building on top of facilities provided by the Linux kernel (primarily cgroups and namespaces), a Docker container, as opposed to a traditional virtual machine, does not require or include a separate operating system. Instead, it relies on the kernel's functionality and uses resource isolation (CPU, memory, block I/O, network, etc.) and separate namespaces to isolate the application's view of the operating system. Docker accesses the Linux kernel's virtualization features either directly through the provided libcontainer library (which is available since Docker 0.9), or indirectly via libvirt, LXC (Linux Containers) or systemd-nspawn.
+
+* Use cases
+1. Docker for local application development and test
+# The primary challenge in maintaining a highly productive development environment for distributed applications can be summarized as:
+
+	Works on my machine → Works again on my machine tomorrow → Works on a test machine
+
+2. Docker for development team collaboration
+# This use case focuses on how Docker can help members of a development team that need to work together on the same codebase. Beyond the challenges a solo developer experiences, described above, the additional problems for a development team working on code concurrently can be summarized as:
+
+	Works on my machine → Works on your machine
+
+3. Docker for continuous integration
+# Typical challenges associated with CI include:
+
+	- Complicated configuration of various types of build jobs (e.g., Maven, GCC and JUnit)
+	- Need for a clean environment for the build or test, to eliminate possible contaminants
+	- Managing the total execution time of the CI workflow
+# Setup and execution time for build slaves is a key metric for effective CI. 
+# Test execution time has a material impact on software quality. 
+# The more time it takes to run the tests, the less testing will be done.
+
+4. Docker for production application deployment
+# The challenge in deploying containerized applications into a production environment can be summarized as:
+
+	Works on my machine → Works on QA machines → Works (the same) on production hardware 
+	→ Stays working (securely) on the production environment
+
+5. Docker for creating a private PAAS
+
+* History
+.image  dockerizing_development_workflow/docker-wikipedia.jpg
+Docker was released as open source in *March* *2013*
+
+* References
+- [[http://docs.docker.com/][Official Docker documentation]]
+- [[https://github.com/wsargent/docker-cheat-sheet][Docker Cheat Sheet]]
+- [[http://blogs.gartner.com/richard-watson/ok-get-dockers-great/][Docker Use cases - Article]]
+
+* Buzzwords
+Docker, Vagrant, Chef, Ansible, Puppet
+
+* Some title
+.caption _Gopher_ by [[http://www.reneefrench.com][Renée French]]
+.link http://golang.org golang.org
+
+`$ sudo docker run ubuntu:14.04 /bin/echo 'Hello world' Hello world`
+_italic_
+*bold*
+`program`
+
+    _ this_is_all_italic_
+    _Why_use_scoped__ptr_? Use plain ***ptr* instead.
+
+
+.code dockerizing_development_workflow/snippe1.txt
