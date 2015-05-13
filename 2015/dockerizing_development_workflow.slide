@@ -70,6 +70,11 @@ There's a great StackOverflow answer [[http://stackoverflow.com/questions/160473
 - Google 2005
 - LXC 2010 -- released 2014, 
 
+* Docker architecture
+[[https://docs.docker.com/introduction/understanding-docker/][Understanding Docker]]
+
+.image dockerizing_development_workflow/docker_architecture.jpg
+
 * Docker image storage
 - Official hosted registry [[][https://hub.docker.com/]]
 - Private on premise registry [[][https://github.com/docker/distribution]]
@@ -105,7 +110,14 @@ There's a great StackOverflow answer [[http://stackoverflow.com/questions/160473
 
 
 * Docker Setup
+Client-server architecture
 
+Client - Server demon -> Registry
+
+* Docker Client
+
+** Boot2docker
+[[http://azure.microsoft.com/blog/2015/04/16/docker-client-for-windows-is-now-available/][Docker Client for Windows is Now Available]]
 
 * References
 - [[http://docs.docker.com/][Official Docker documentation]]
