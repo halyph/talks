@@ -61,3 +61,10 @@ Warning: '--tree' is deprecated, it will be removed soon. See usage.
   │   └─9fec74352904 Virtual Size: 188.3 MB
   │     └─d0955f21bf24 Virtual Size: 188.3 MB Tags: ubuntu:14.04, ubuntu:14.04.2, ubuntu:latest, ubuntu:trusty, ubuntu:trusty-20150320
 ```
+
+
+
+## Image vs dontainer
+http://docs.docker.com/terms/image/
+http://docs.docker.com/terms/layer/ 
+http://docs.docker.com/terms/container/
