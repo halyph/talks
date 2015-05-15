@@ -7,13 +7,13 @@ Pull Ubuntu image `docker pull ubuntu:14.04`
 Run ubuntu container `docker run -it ubuntu:14:04`
 
 ## Dockerfile
-Create 
+Create
 ```
 FROM ubuntu:14.04
 CMD echo "Hello ITRally"
 ```
 
-Run boot2docker 
+Run boot2docker
 ```
 $ boot2docker up
 Waiting for VM and Docker daemon to start...
@@ -65,6 +65,6 @@ Warning: '--tree' is deprecated, it will be removed soon. See usage.
 
 
 ## Image vs dontainer
-http://docs.docker.com/terms/image/
-http://docs.docker.com/terms/layer/ 
-http://docs.docker.com/terms/container/
+- http://docs.docker.com/terms/image/
+- http://docs.docker.com/terms/layer/
+- http://docs.docker.com/terms/container/

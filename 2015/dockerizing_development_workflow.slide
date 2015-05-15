@@ -14,26 +14,36 @@ http://halyph.com
 1. What is Docker?
 2. Internals of Docker
 3. Docker basic commands
-4. Composer 
-5. Sample usage
-
-* What is Docker? 
+4. Sample usage
 
 * History
 .image  dockerizing_development_workflow/docker-wikipedia.jpg
 .caption source Wikipedia
 Docker was released as open source in *March* *2013*
-- say smth about dotCloud
 
-* The current adopt state
+* History
+*February* *2013*: private repo,
+*March* *2013*: Docker 0.1 release at PyCon:
+- requires LXC, AUFS;
+- works on Debian/Ubuntu kernels
+\.
+\.
+\.
+
+*June* *2014*: Docker 1.1, released at DockerCon
+*May* *12* *2015*:  Docker 1.6.2, release 3 days ago
 
 * Docker Community
 - 21500+ Github Stars
-- 900+ Github Contributors 
+- 900+ Github Contributors
 - ~50% of the commits are done by community
+.image dockerizing_development_workflow/docker_github_status.jpg
+
 
 * Docker is
 Docker is an open source platform to automate development cycle of applications inside software containers.
+
+Build → ship → run any *app*
 
 #Docker implements a high-level API to provide lightweight containers that run processes in isolation.  Building on top of facilities provided by the Linux kernel (primarily cgroups and namespaces), a Docker container, as opposed to a traditional virtual machine, does not require or include a separate operating system. Instead, it relies on the kernel's functionality and uses resource isolation (CPU, memory, block I/O, network, etc.) and separate namespaces to isolate the application's view of the operating system. Docker accesses the Linux kernel's virtualization features either directly through the provided libcontainer library (which is available since Docker 0.9), or indirectly via libvirt, LXC (Linux Containers) or systemd-nspawn.
 
@@ -41,43 +51,48 @@ Docker is an open source platform to automate development cycle of applications 
 - Linux kernel 3.8+
 - Union file system - AUFS, btrfs, vfs or DeviceMapper
 
-* Docker technology stack 
-.image dockerizing_development_workflow/docker-execdriver-diagram.png 400 _
-.caption Docker can use different interfaces to access virtualization features of the Linux kernel. Diagram source: Docker Inc.
-
 * Docker vs VM
 .image dockerizing_development_workflow/docker-containers-vs-vms.png 400 _
 .caption Containers vs VMs. Diagram source: Docker Inc.
 There's a great StackOverflow answer [[http://stackoverflow.com/questions/16047306/how-is-docker-io-different-from-a-normal-virtual-machine][showing the differences]]
 
-
-* Docker vs VM (part 2)
-- Snapshot process is faster in Docker than VMs
+* Docker vs VM
 - Startup time is less for Docker than VMs (super fast)
+- Docker images have much smaller size
+- Snapshot process is faster in Docker than VMs
 - Docker images have more portability
 - Docker provides versioning of images
 - Docker images do not have states
 - Don't need SSH for access
-- Docker images have much smaller size
 
 * Docker vs native
-- Docker helps to avoid lib version conflicts 
+- Docker helps to avoid lib version conflicts
 - Docker has no or minimal overhead while using resource for visualization
+
+* Docker Linux technology stack
+.image dockerizing_development_workflow/docker-execdriver-diagram.png 400 _
+.caption Docker can use different interfaces to access virtualization features of the Linux kernel. Diagram source: Docker Inc.
 
 # Virtual machines have a full OS with its own memory management, device drivers, daemons, etc. Containers share the host’s OS and are therefore lighter weight.
 
-* History of Linux Containers
-- Google 2005
-- LXC 2010 -- released 2014, 
-
 * Docker architecture
-[[https://docs.docker.com/introduction/understanding-docker/][Understanding Docker]]
+- Docker Client
+- Docker Daemon
+- Docker Registry
+.image dockerizing_development_workflow/docker-architecture-techtip39.png
 
-.image dockerizing_development_workflow/docker_architecture.jpg
+* Docker Internals
+- [[http://docs.docker.com/terms/image/][Docker image]]
+- [[http://docs.docker.com/terms/layer/][Docker layer]]
+- [[http://docs.docker.com/terms/container/][Docker container]]
 
-* Docker image storage
-- Official hosted registry [[][https://hub.docker.com/]]
-- Private on premise registry [[][https://github.com/docker/distribution]]
+- [[http://docs.docker.com/terms/repository/][Docker repository]]
+- [[http://docs.docker.com/terms/registry/][Docker registry]]
+
+
+* Docker image
+
+
 
 * Use cases
 1. Docker for local application development and test
@@ -96,14 +111,14 @@ There's a great StackOverflow answer [[http://stackoverflow.com/questions/160473
 	- Complicated configuration of various types of build jobs (e.g., Maven, GCC and JUnit)
 	- Need for a clean environment for the build or test, to eliminate possible contaminants
 	- Managing the total execution time of the CI workflow
-# Setup and execution time for build slaves is a key metric for effective CI. 
-# Test execution time has a material impact on software quality. 
+# Setup and execution time for build slaves is a key metric for effective CI.
+# Test execution time has a material impact on software quality.
 # The more time it takes to run the tests, the less testing will be done.
 
 4. Docker for production application deployment
 # The challenge in deploying containerized applications into a production environment can be summarized as:
 
-	Works on my machine → Works on QA machines → Works (the same) on production hardware 
+	Works on my machine → Works on QA machines → Works (the same) on production hardware
 	→ Stays working (securely) on the production environment
 
 5. Docker for creating a private PAAS
@@ -115,9 +130,12 @@ Client-server architecture
 Client - Server demon -> Registry
 
 * Docker Client
-
-** Boot2docker
+Boot2docker
 [[http://azure.microsoft.com/blog/2015/04/16/docker-client-for-windows-is-now-available/][Docker Client for Windows is Now Available]]
+
+* Docker image storage
+- Official hosted registry [[][https://hub.docker.com/]]
+- Private on premise registry [[][https://github.com/docker/distribution]]
 
 * References
 - [[http://docs.docker.com/][Official Docker documentation]]
@@ -126,6 +144,7 @@ Client - Server demon -> Registry
 - [[https://linuxcontainers.org/][Linux Containers]]
 - [[http://en.wikipedia.org/wiki/Docker_(software)][Docker wikipedia]]
 - [[https://blog.docker.com/2014/06/dockercon-video-performance-characteristics-of-vms-vs-docker-containers-by-boden-russel-ibm/][DOCKERCON VIDEO: PERFORMANCE CHARACTERISTICS OF VMS VS DOCKER CONTAINERS]]
+- [[https://docs.docker.com/introduction/understanding-docker/][Understanding Docker]]
 
 * Buzzwords
 Docker, Vagrant, Chef, Ansible, Puppet
