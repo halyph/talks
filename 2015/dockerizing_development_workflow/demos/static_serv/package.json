@@ -1,0 +1,11 @@
+{
+  "name": "docker-nodejs-static-srv",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Node.js static server",
+  "author": "Bob",
+  "dependencies": {
+    "finalhandler": "0.3.6",
+    "serve-static": "1.9.3"
+  }
+}
