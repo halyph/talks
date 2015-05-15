@@ -138,19 +138,10 @@ There's a great StackOverflow answer [[http://stackoverflow.com/questions/160473
 
 5. Docker for creating a private PAAS
 
+* Docker Install
 
-* Docker Setup
-Client-server architecture
-
-Client - Server demon -> Registry
-
-* Docker Client
-Boot2docker
+* Boot2docker
 [[http://azure.microsoft.com/blog/2015/04/16/docker-client-for-windows-is-now-available/][Docker Client for Windows is Now Available]]
-
-* Docker image storage
-- Official hosted registry [[][https://hub.docker.com/]]
-- Private on premise registry [[][https://github.com/docker/distribution]]
 
 * References
 - [[http://docs.docker.com/][Official Docker documentation]]
@@ -161,6 +152,10 @@ Boot2docker
 - [[https://blog.docker.com/2014/06/dockercon-video-performance-characteristics-of-vms-vs-docker-containers-by-boden-russel-ibm/][DOCKERCON VIDEO: PERFORMANCE CHARACTERISTICS OF VMS VS DOCKER CONTAINERS]]
 - [[https://docs.docker.com/introduction/understanding-docker/][Understanding Docker]]
 - [[http://www.slideshare.net/jpetazzo/introduction-to-docker-december-2014-tour-de-france-bordeaux-special-edition][Introduction to Docker, December 2014 "Tour de France" Bordeaux Special Edition, Jérôme Petazzoni]]
+
+- Official hosted registry [[][https://hub.docker.com/]]
+- Private on premise registry [[][https://github.com/docker/distribution]]
+
 
 * Buzzwords
 Docker, Vagrant, Chef, Ansible, Puppet
