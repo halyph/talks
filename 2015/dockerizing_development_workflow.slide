@@ -22,32 +22,39 @@ http://halyph.com
 Docker was released as open source in *March* *2013*
 
 * History
-*February* *2013*: private repo,
+.image dockerizing_development_workflow/history.jpg
+*February* *2013*: private repo, with liveral access (~200 people had access and helped to review, contribute, give feedback)
 *March* *2013*: Docker 0.1 release at PyCon:
 - requires LXC, AUFS;
 - works on Debian/Ubuntu kernels
-\.
-\.
-\.
-
 *June* *2014*: Docker 1.1, released at DockerCon
 *May* *12* *2015*:  Docker 1.6.2, release 3 days ago
 
 * Docker Community
+.image dockerizing_development_workflow/github-logo-text-horizontal.png
 - 21500+ Github Stars
 - 900+ Github Contributors
 - ~50% of the commits are done by community
 .image dockerizing_development_workflow/docker_github_status.jpg
 
 
-* Docker is
+* What is Docker?
+.image dockerizing_development_workflow/docker_logo.png 100 _
 Docker is an open source platform to automate development cycle of applications inside software containers.
 
-Build → ship → run any *app*
+Build → ship → run *any* app, *anywhere*
+
+- *Build*: package your application in a container
+- *Ship*: move that container from a mashine to another
+- *Run*: execite that container (i.e. your application)
+- *Any* *application*: anything that runs on Linux
+- *Anywhere*: local VM, cloud instance, bare metal, etc.
+
 
 #Docker implements a high-level API to provide lightweight containers that run processes in isolation.  Building on top of facilities provided by the Linux kernel (primarily cgroups and namespaces), a Docker container, as opposed to a traditional virtual machine, does not require or include a separate operating system. Instead, it relies on the kernel's functionality and uses resource isolation (CPU, memory, block I/O, network, etc.) and separate namespaces to isolate the application's view of the operating system. Docker accesses the Linux kernel's virtualization features either directly through the provided libcontainer library (which is available since Docker 0.9), or indirectly via libvirt, LXC (Linux Containers) or systemd-nspawn.
 
 * Docker Host OS requirement
+.image dockerizing_development_workflow/Linux-Kernel-3.jpg
 - Linux kernel 3.8+
 - Union file system - AUFS, btrfs, vfs or DeviceMapper
 
@@ -145,6 +152,7 @@ Boot2docker
 - [[http://en.wikipedia.org/wiki/Docker_(software)][Docker wikipedia]]
 - [[https://blog.docker.com/2014/06/dockercon-video-performance-characteristics-of-vms-vs-docker-containers-by-boden-russel-ibm/][DOCKERCON VIDEO: PERFORMANCE CHARACTERISTICS OF VMS VS DOCKER CONTAINERS]]
 - [[https://docs.docker.com/introduction/understanding-docker/][Understanding Docker]]
+- [[http://www.slideshare.net/jpetazzo/introduction-to-docker-december-2014-tour-de-france-bordeaux-special-edition][Introduction to Docker, December 2014 "Tour de France" Bordeaux Special Edition, Jérôme Petazzoni]]
 
 * Buzzwords
 Docker, Vagrant, Chef, Ansible, Puppet
