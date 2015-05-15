@@ -37,7 +37,6 @@ Docker was released as open source in *March* *2013*
 - ~50% of the commits are done by community
 .image dockerizing_development_workflow/docker_github_status.jpg
 
-
 * What is Docker?
 .image dockerizing_development_workflow/docker_logo.png 100 _
 Docker is an open source platform to automate development cycle of applications inside software containers.
@@ -97,8 +96,17 @@ There's a great StackOverflow answer [[http://stackoverflow.com/questions/160473
 - [[http://docs.docker.com/terms/registry/][Docker registry]]
 
 
-* Docker image
+* Docker Layers
+.image dockerizing_development_workflow/docker-filesystems-debian.png 500 _
 
+* Docker Layers
+.image dockerizing_development_workflow/docker-filesystems-debianrw.png 500 _
+
+* Docker Layers
+.image dockerizing_development_workflow/docker-filesystems-multilayer.png 500 _
+
+* Docker Layers
+.image dockerizing_development_workflow/docker-filesystems-busyboxrw.png 500 _
 
 
 * Use cases
