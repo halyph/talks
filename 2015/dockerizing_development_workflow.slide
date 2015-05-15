@@ -138,39 +138,16 @@ There's a great StackOverflow answer [[http://stackoverflow.com/questions/160473
 
 5. Docker for creating a private PAAS
 
-* Docker Install
+* Docker vs Boot2Docker
+.image dockerizing_development_workflow/boot2docker.png
 
-* Boot2docker
-[[http://azure.microsoft.com/blog/2015/04/16/docker-client-for-windows-is-now-available/][Docker Client for Windows is Now Available]]
+* Demo time
+
 
 * References
 - [[http://docs.docker.com/][Official Docker documentation]]
 - [[https://github.com/wsargent/docker-cheat-sheet][Docker Cheat Sheet]]
 - [[http://blogs.gartner.com/richard-watson/ok-get-dockers-great/][Docker Use cases - Article]]
 - [[https://linuxcontainers.org/][Linux Containers]]
-- [[http://en.wikipedia.org/wiki/Docker_(software)][Docker wikipedia]]
-- [[https://blog.docker.com/2014/06/dockercon-video-performance-characteristics-of-vms-vs-docker-containers-by-boden-russel-ibm/][DOCKERCON VIDEO: PERFORMANCE CHARACTERISTICS OF VMS VS DOCKER CONTAINERS]]
-- [[https://docs.docker.com/introduction/understanding-docker/][Understanding Docker]]
 - [[http://www.slideshare.net/jpetazzo/introduction-to-docker-december-2014-tour-de-france-bordeaux-special-edition][Introduction to Docker, December 2014 "Tour de France" Bordeaux Special Edition, Jérôme Petazzoni]]
-
-- Official hosted registry [[][https://hub.docker.com/]]
-- Private on premise registry [[][https://github.com/docker/distribution]]
-
-
-* Buzzwords
-Docker, Vagrant, Chef, Ansible, Puppet
-
-* Some title
-.caption _Gopher_ by [[http://www.reneefrench.com][Renée French]]
-.link http://golang.org golang.org
-
-`$ sudo docker run ubuntu:14.04 /bin/echo 'Hello world' Hello world`
-_italic_
-*bold*
-`program`
-
-    _ this_is_all_italic_
-    _Why_use_scoped__ptr_? Use plain ***ptr* instead.
-
-
-.code dockerizing_development_workflow/snippe1.txt
+- Official hosted registry [[https://hub.docker.com/][]]
