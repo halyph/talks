@@ -9,7 +9,8 @@ RUN     yum install -y npm
 # Bundle app source
 COPY . /src
 # Install app dependencies
-RUN cd /src; npm install
+RUN cd /src; npm install http-server -g
 
-EXPOSE  4000
-CMD ["node", "/src/server.js"]
+EXPOSE  8080
+WORKDIR /src
+CMD ["http-server"]
