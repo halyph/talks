@@ -1,3 +1,19 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Conferences HOW TO](#conferences-how-to)
+  - [Retrospective of visited conferences](#retrospective-of-visited-conferences)
+  - [How to find dedicated event](#how-to-find-dedicated-event)
+    - [Java related](#java-related)
+      - [Ukrainian User Groups](#ukrainian-user-groups)
+      - [Big Java Conferences in Ukraine](#big-java-conferences-in-ukraine)
+      - [Events register](#events-register)
+    - [Other events](#other-events)
+  - [Items to discuss](#items-to-discuss)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Conferences HOW TO
 
 ## Retrospective of visited conferences
@@ -59,3 +75,11 @@
 - http://ua.pycon.org/
 - http://rubyc.eu/
 - http://dotnetug-lviv.blogspot.com/ 
+
+
+## Items to discuss
+
+- How to evaluate a conference before visiting it?
+- What talk should I attend?
+- Which speaker is worth listen again?
+- How to filter "boring" speakers?
