@@ -13,8 +13,8 @@ http://halyph.com
 * Disclaimer
 
 Assume You know smth about Docker
-This is not promo for Docker
-Neither for Vagrant
+This is not a Docker's promo
+
 
 
 * Outline
@@ -94,6 +94,9 @@ Unified form factor:
 - Avoid manual/custom installation of popular software: db, queue, caches, etc
 - Docker is convenience app distribution model
 
+* Docker Logs
+- Log Viewer
+- Aggregated Log Viewer
 
 * Docker tips - Image hierarchy
 
@@ -110,7 +113,7 @@ Unified form factor:
 
 * Case Study
 - Tech stack: Spring MVC, Spring Boot, JS/Angular.js, RoR
-- 3d party  : Consul, HAPpoxy, Postgres, Elasticsearch, Redis, Nginx
+- 3d party  : Consul, HAPpoxy, Postgres, Elasticsearch, Redis, Nginx, RabbitMQ
 
 * Spring Boot -> Docker
 - Install Java
@@ -140,7 +143,7 @@ Unified form factor:
 
 * Development Env issues
 - Developing 2 applications
-- Requires 7 apps for properly functional integrated env
+- Requires 9+ apps for properly functional integrated env
 - Windows Machines *:-(*
 - "Golden"/Base VM is hard to maintain
 
@@ -158,7 +161,7 @@ _Mitchell_Hashimoto_
 - vagrant up
 - vagrant provision
 
-Vagrant *docker* *provisioner* works unexpected.
+Vagrant *docker* *provisioner* works not as expected.
 
 * Vagrantfile
 
@@ -176,7 +179,7 @@ Vagrant *docker* *provisioner* works unexpected.
       config.vm.synced_folder ".", "/vagrant", disabled: true
     end
 
-* Contained setting YAML
+* Container setting YAML
 
     ---
     - name: nginx-01
