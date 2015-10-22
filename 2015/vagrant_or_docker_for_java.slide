@@ -1,0 +1,230 @@
+Vagrant or Docker for Java dev environment?
+Engineering Communities
+
+22 October 2015
+Tags: docker, vagrant
+
+Orest Ivasiv
+Software engineer, Softserve
+Docker hobbyist
+http://halyph.com
+@halyph
+
+* Disclaimer
+
+Assume You know smth about Docker
+This is not promo for Docker
+Neither for Vagrant
+
+
+* Outline
+1. Container's usage concept
+2. Thoughts
+3. Case study
+4. Experience sharing
+
+* "It works in my development environment"
+
+
+* Containers in our Life
+
+.image vagrant_or_docker_for_java/concept1.png 400 _
+
+* Containers in our Life - Evolution
+
+.image vagrant_or_docker_for_java/concept2.png 400 _
+
+* Containers in our Life - Evolution Cont.
+
+.image vagrant_or_docker_for_java/concept3.png 400 _
+
+* Thoughts About Container benefits
+- Different programming Languages: Java, Ruby, Python, JS/Node.js, Erlang, etc...
+- Different ecosystems: JVM, JS, Ruby
+- Application packaging 
+- Different Deployment Models
+- Run-time environment collision
+
+* Container Benefits
+Unified form factor: 
+- Different internals 
+- Same application run approaches
+
+* Docker?
+
+"Docker is a tool for building and deploying applications by packaging them into lightweight containers."
+
+* Pipeline - Traditional
+
+.image vagrant_or_docker_for_java/pipe1.png 400 _
+
+* Pipeline - Docker
+
+.image vagrant_or_docker_for_java/pipe2.png 400 _
+
+* Terms
+
+- *Container* How you run your application
+- *Images* How you store your application
+- *Docker* file
+    FROM debian:stable
+    RUN apt-get update && apt-get install -y --force-yes apache2
+    EXPOSE 80 443
+    VOLUME ["/var/www", "/var/log/apache2", "/etc/apache2"]
+    ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+
+
+* Most Popular Docker commands
+- docker run
+- docker stop
+- docker start
+- docker restart
+- docker logs
+- docker exec
+- docker rm
+- docker rmi
+- docker ps
+- docker images
+
+* Docker tips
+- Use Docker compose
+- It's impossible to use many container w/o automation tool like Compose
+- Use Docker for dev and ops
+- Reuse public images
+- Avoid manual/custom installation of popular software: db, queue, caches, etc
+- Docker is convenience app distribution model
+
+
+* Docker tips - Image hierarchy
+
+.image vagrant_or_docker_for_java/image_hierarchy.png 400 _
+
+* Maven + Docker
+- [[https://github.com/alexec/docker-maven-plugin][alexec/docker-maven-plugin]]
+- [[https://github.com/rhuss/docker-maven-plugin][rhuss/docker-maven-plugin]]
+- [[https://github.com/spotify/docker-maven-plugin][spotify/docker-maven-plugin]]
+
+* Gradle + Docker
+- [[https://github.com/gesellix/gradle-docker-plugin][gesellix/gradle-docker-plugin]]
+- [[https://github.com/bmuschko/gradle-docker-plugin][bmuschko/gradle-docker-plugin]]
+
+* Case Study
+- Tech stack: Spring MVC, Spring Boot, JS/Angular.js, RoR
+- 3d party  : Consul, HAPpoxy, Postgres, Elasticsearch, Redis, Nginx
+
+* Spring Boot -> Docker
+- Install Java
+- Install app JAR file
+- Configure Image to run Java on start
+- Add external configuration
+
+* Build Image
+
+    FROM java:8
+    VOLUME /tmp
+    ADD gs-spring-boot-docker-0.1.0.jar app.jar
+    RUN bash -c 'touch /app.jar'
+    ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+
+* Run App
+        docker run -d --name myservices -p 4780:4780 --restart always -v /var/log/my-services:/var/log/SRV \ 
+        -e CONF_LOCATION=s3://my-storage/test.properties \
+        -e SERVICE_HOST_NAME=`hostname --ip` docker.mycorp.net/myservices:develop
+
+* Update staging env
+- Compare running container with what's been built by CI
+- Pulls latest images from Docker registry
+- Stops old version
+- Launches new version
+- Register service in Consul
+
+* Development Env issues
+- Developing 2 applications
+- Requires 7 apps for properly functional integrated env
+- Windows Machines *:-(*
+- "Golden"/Base VM is hard to maintain
+
+* Vagrant ?
+
+"Vagrant is not for managing machines, Vagrant is for managing development environments. The fact Vagrant spins up machines is mostly historic."
+
+_Mitchell_Hashimoto_
+
+* Vagrant features
+- docker provisioning
+- docker provider
+
+* Vagrant popular commands
+- vagrant up
+- vagrant provision
+
+Vagrant *docker* *provisioner* works unexpected.
+
+* Vagrantfile
+
+    VAGRANTFILE_API_VERSION = "2"
+    Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+      config.vm.hostname = "docker-host"
+
+
+      # Spin up a "host box" for use with the Docker provider
+      # and then provision it with Docker
+      config.vm.box = "slowe/ubuntu-trusty-x64"
+      config.vm.provision "docker"
+
+      # Disable synced folders (prevents an NFS error on "vagrant up")
+      config.vm.synced_folder ".", "/vagrant", disabled: true
+    end
+
+* Contained setting YAML
+
+    ---
+    - name: nginx-01
+      image: nginx
+      ports: ['80:80', '443:443']
+    - name: redis-01
+      image: redis
+      ports: ['6379:6379']
+* Iterate container setting
+
+    # Iterate through the entries in the YAML file
+    containers.each do |container|
+    config.vm.define container["name"] do |cntnr|
+
+      # Disable synced folders for the Docker container
+      # (prevents an NFS error on "vagrant up")
+      cntnr.vm.synced_folder ".", "/vagrant", disabled: true
+
+      # Configure the Docker provider for Vagrant
+      cntnr.vm.provider "docker" do |docker|
+
+        # Specify the Docker image to use, pull value from YAML file
+        docker.image = container["image"]
+
+        # Specify port mappings, pull value from YAML file
+        # If omitted, no ports are mapped!
+        docker.ports = container["ports"]
+
+        # Specify a friendly name for the Docker container, pull from YAML file
+        docker.name = container["name"]
+      end
+    end
+
+
+
+
+* History Notes
+
+*Vagrant*
+
+- _Initial_ _release_ - March 8, 2010
+- _Current_ _Version_ - July 17, 2015 - *v.1.7.4*
+
+*Docker*
+
+- _Initial_ _release_ - March 2013
+- _Current_ _Version_ - October 12, 2015 - *v.1.8.3*
+
+* References
+- [[http://stackoverflow.com/questions/16647069/should-i-use-vagrant-or-docker-io-for-creating-an-isolated-environment][SO: Should I use Vagrant or Docker.io for creating an isolated environment?]]
+- [[https://github.com/lowescott/learning-tools/tree/master/vagrant-docker-yaml][Running Multiple Docker Containers in Vagrant with YAML]]
