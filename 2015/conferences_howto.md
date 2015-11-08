@@ -44,6 +44,7 @@
     - Java Frameworks Day (May 7, 2015)
     - JEEConf (May 2015)
     - JDay Lviv (September 19, 2015)
+    - JavaDay Kiev (November 6, 2015)
     
 *Note:* I don't count local conferences like **IT Event** or **IT Rally**. 
 
