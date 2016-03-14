@@ -43,6 +43,7 @@
     - Pacemaker Big Data (February 28, 2015)
     - Java Frameworks Day (May 7, 2015)
     - JEEConf (May 2015)
+    - Devoxx Poland (June 22-24, 2015)
     - JDay Lviv (September 19, 2015)
     - JavaDay Kiev (November 6, 2015)
     
