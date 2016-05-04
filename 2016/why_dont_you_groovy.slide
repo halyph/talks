@@ -17,3 +17,10 @@ Software engineer, Softserve
 - Hipsters are not Groovy (it's 2016)
 - No Grails, Spock, Geb, etc
 
+* Groovy is compiled Language
+
+.image why_dont_you_groovy/groovy_compile.jpg
+Groovy is a dynamic language
+Dynamic != interpreted
+Interpreted == a runtime interprets an AST
+Groovy compiles down to JVM bytecode
