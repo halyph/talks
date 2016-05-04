@@ -8,6 +8,11 @@ Orest Ivasiv
 Software engineer, Softserve
 @halyph
 
+* Audience
+
+- Java developers
+- No experience in Groovy
+
 * Disclaimer
 
 - We will not talk about Groovy language in details
@@ -15,7 +20,68 @@ Software engineer, Softserve
 - We are not Groovy haters/lovers. We are pragmatic devs
 - Groovy is not a panacea, Groovy is a hammer
 - Hipsters are not Groovy (it's 2016)
-- No Grails, Spock, Geb, etc
+
+* Problems and Tasks 
+
+- Java devs should not write scripts in Java
+    Bash, Python, Ruby, etc.
+- How to re-use existence Java knowledge in automation tasks
+- How to choose the _right_ scripting language
+- How to automate on Windows, Linux and OSX
+
+* Why Java is bad for scripting and automation?
+
+- Tedious File and Network processing
+- Tedious collection processing
+- Tedious XML/JSON processing
+- Verbose type declaration
+- Limited DSL support
+- Painful object construction code
+- Just too verbose for small tasks
+- Slow Edit-Compile-Run loop
+
+* Scripts vs Tools
+
+* Scripts
+
+- Run on all major OSs
+- Easy to distribute
+- Easy to read and maintain
+- Reasonably small
+- Quick Edit-Run cycle
+- Performance is not important
+
+
+*E.g.*
+
+    - Bash, Ruby, Python, Node.js, Groovy
+    - Tcl, Lua
+
+* Tools
+
+- No sources
+- "Fat" binary
+- Popular or/and minimal runtime
+- *No* runtime - single binary
+- *Very* easy to distribute
+- Low maintenance cost
+
+
+*E.g.*
+
+    - Java/JVM, Go
+    - C/C++, Python, Node.js
+
+* Groovy
+
+- JVM language 
+    Java, Scala, Clojure, Groovy, Kotlin
+- Superb interoperability with Java 
+- Syntax is very similar to Java
+- All Java libraries can be used in Groovy
+- Almost all Java code is Groovy code
+- Groovy language is full of modern features
+- DSL
 
 * Groovy is compiled Language
 
@@ -24,3 +90,56 @@ Groovy is a dynamic language
 Dynamic != interpreted
 Interpreted == a runtime interprets an AST
 Groovy compiles down to JVM bytecode
+
+* Language features
+
+.image why_dont_you_groovy/groovy-lang.png 600 _
+
+
+* Language features
+
+- List
+- Map
+- GString
+- GDK
+- MOP
+- Builders
+
+* Groovy Samples
+
+* Launching a Jetty server to serve Groovy templates
+
+    @Grapes([
+        @Grab(group='org.eclipse.jetty.aggregate', module='jetty-server', version='8.1.7.v20120910'),
+        @Grab(group='org.eclipse.jetty.aggregate', module='jetty-servlet', version='8.1.7.v20120910'),
+        @Grab(group='javax.servlet', module='javax.servlet-api', version='3.0.1')])
+
+    import org.eclipse.jetty.server.Server
+    import org.eclipse.jetty.servlet.*
+    import groovy.servlet.*
+
+    def runServer(duration) {
+        def server = new Server(8080)
+        def context = new ServletContextHandler(server, "/", ServletContextHandler.SESSIONS);
+        context.resourceBase = "."
+        context.addServlet(TemplateServlet, "*.gsp")
+        server.start()
+        sleep duration
+        server.stop()
+    }
+
+    runServer(10000)
+
+* What's ugly in Groovy
+
+- JVM and Groovy script start time is slow
+- Limited OS-level scripting (see Python, Ruby)
+- Groovy is another language. It’s not Java (thanks cap)
+- Groovy is not well accepted in other communities
+- Not convenient to use Groovy without IDE
+
+
+* References
+
+- [[http://melix.github.io/blog/2015/02/who-is-groovy.html][Who is Groovy? by Cédric Champeau – history and people behind Groovy language]]
+- [[http://mrhaki.blogspot.com][Blog about Groovy, Gradle and Grails]]
