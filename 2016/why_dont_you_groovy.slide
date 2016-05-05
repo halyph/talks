@@ -23,7 +23,7 @@ Software engineer, Softserve
 
 * Problems and Tasks 
 
-- Java devs should not write scripts in Java
+- Java devs should *not* write scripts in Java
     Bash, Python, Ruby, etc.
 - How to re-use existence Java knowledge in automation tasks
 - How to choose the _right_ scripting language
@@ -143,3 +143,6 @@ Groovy compiles down to JVM bytecode
 
 - [[http://melix.github.io/blog/2015/02/who-is-groovy.html][Who is Groovy? by Cédric Champeau – history and people behind Groovy language]]
 - [[http://mrhaki.blogspot.com][Blog about Groovy, Gradle and Grails]]
+- [[http://groovy-lang.org/][http://groovy-lang.org/]] 
+- [[https://www.youtube.com/watch?v=1ogwSsl6EGQ][Groovy on the Shell]]
+- [[https://github.com/kdabir/awesome-groovy][Curated list of awesome groovy libraries, frameworks and resourcesy]]
