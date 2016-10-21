@@ -46,7 +46,13 @@
     - Devoxx Poland (June 22-24, 2015)
     - JDay Lviv (September 19, 2015)
     - JavaDay Kiev (November 6, 2015)
-    
+- **2016**
+    - JEEConf (May 20-21, 2016)
+    - JavaDay Lviv (June 12, 2016)
+    - JDay Lviv (September 3rd, 2016)
+    - AI Ukrane Kharkiv (October 8-9, 2016)
+
+
 *Note:* I don't count local conferences like **IT Event** or **IT Rally**. 
 
 ## How to find dedicated event
