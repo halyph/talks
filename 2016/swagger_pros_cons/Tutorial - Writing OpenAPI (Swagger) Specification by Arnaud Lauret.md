@@ -1,0 +1,8 @@
+* Part 1: [Introduction](http://apihandyman.io/writing-openapi-swagger-specification-tutorial-part-1-introduction/)
+* Part 2: [The basics](http://apihandyman.io/writing-openapi-swagger-specification-tutorial-part-2-the-basics/)
+* Part 3: [Simplifying specification file](http://apihandyman.io/writing-openapi-swagger-specification-tutorial-part-3-simplifying-specification-file/)
+* Part 4: [Advanced data modeling](http://apihandyman.io/writing-openapi-swagger-specification-tutorial-part-4-advanced-data-modeling)
+* Part 5: [Advanced input and output modeling](http://apihandyman.io/writing-openapi-swagger-specification-tutorial-part-5-advanced-input-and-output-modeling/)
+* Part 6: [Defining security](http://apihandyman.io/writing-openapi-swagger-specification-tutorial-part-6-defining-security)
+* Part 7: [Documentation](http://apihandyman.io/writing-openapi-swagger-specification-tutorial-part-7-documentation/)
+* Part 8: [Splitting specification file](http://apihandyman.io/writing-openapi-swagger-specification-tutorial-part-8-splitting-specification-file/)
