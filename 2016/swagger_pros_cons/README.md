@@ -1,5 +1,5 @@
-1. [Swagger - Documenting REST API (Pros & Cons)](quiver:///notes/5B0CDBCE-0FCF-4DF8-AF37-25237DA5DF2B)
-2. [Disclamer](quiver:///notes/C6B56767-4BB9-4912-AF10-24A66150DE69)
+1. [Swagger - Documenting REST API (Pros & Cons)](Swagger - Documenting REST API (Pros & Cons).md)
+2. [Disclamer](quiver:///notes/C6B56767-4BB9-4912-AF10-24A66150DE69
 3. [Comparison](quiver:///notes/5AAA83DC-8304-4CA9-971A-02A8F5577461)
 4. [API Documentation Approaches ](quiver:///notes/C85A523E-C9C7-4143-B750-5DFC269FF73B)
 5. [Swagger Tools](quiver:///notes/F062E3FC-8486-4258-9D9A-183EB766CEA9)
