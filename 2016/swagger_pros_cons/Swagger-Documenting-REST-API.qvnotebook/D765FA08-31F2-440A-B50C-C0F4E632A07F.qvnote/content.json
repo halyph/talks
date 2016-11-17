@@ -1,0 +1,9 @@
+{
+  "title": "Useful Videos",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "* [Generate client stubs & document your REST API using Swagger & Spring by Johannes Fiala](https://www.youtube.com/watch?v=43GhBbP--oI)\n\n* [Swagger: How to Create an API Documentation](https://www.youtube.com/watch?v=xggucT_xl5U)\n\n\n### Spring Rest Docs\n* [Spring REST Docs - Documenting RESTful APIs using your tests by Andreas Evers](https://www.youtube.com/watch?v=iWj-t69EdN4)\n  * [Slides](https://speakerdeck.com/andreasevers/spring-rest-docs-documenting-restful-apis-using-your-tests)\n  * [Demo App](https://github.com/andreasevers/spring-restdocs-demo-devoxx)\n* [Documenting RESTful APIs](https://www.youtube.com/watch?v=k5ncCJBarRI)\n  * [Slides](http://www.slideshare.net/SpringCentral/documenting-restful-apis)\n"
+    }
+  ]
+}

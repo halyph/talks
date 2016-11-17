@@ -1,0 +1,9 @@
+{
+  "title": "Run Swagger Editor Locally ",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "# Running with Docker\n```bash\ndocker pull swaggerapi/swagger-editor\ndocker run -p 80:8080 swaggerapi/swagger-editor\n```\n\n# Using http-server module\n```bash\nnpm install -g http-server\nwget https://github.com/swagger-api/swagger-editor/releases/download/v2.10.4/swagger-editor.zip\nunzip swagger-editor.zip\nhttp-server swagger-editor\n```\n\n# Building From Source\n```bash\ngit clone https://github.com/swagger-api/swagger-editor.git\ncd swagger-editor\nnpm install\nnpm start\n```\n\n### References:\n- https://github.com/swagger-api/swagger-editor/#running-locally\n- [Swagger Editor](http://swagger.io/swagger-editor/)\n  - Demo http://editor.swagger.io/#/?import=http://petstore.swagger.io/v2/swagger.json"
+    }
+  ]
+}

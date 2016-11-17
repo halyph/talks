@@ -1,0 +1,9 @@
+{
+  "title": "Summary",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "# Cons\n\n1. Writing big Swagger Spec is really painful\n2. Swagger annotations create a lot of redundant noise in code base\n3. Swagger annotations can not be generated via unit tests (see [Spring Rest Docs](https://github.com/spring-projects/spring-restdocs))\n\n# Pros\n\n1. Swagger UI can render spec generated from other **languages**\n2. API documentation looks the same for different **languages/frameworks** (Language Agnostic)\n3. Swagger supports both approached for API Documentation creation\n  1. Top-Down\n  2. Bottom-Up\n4. Swagger Spec can be rendered by Swagger UI and/or ReDoc\n5. Swagger UI can be used for API exploratory analysis"
+    }
+  ]
+}

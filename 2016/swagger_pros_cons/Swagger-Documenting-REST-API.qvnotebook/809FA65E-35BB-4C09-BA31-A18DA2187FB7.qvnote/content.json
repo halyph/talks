@@ -1,0 +1,9 @@
+{
+  "title": "Swagger Annotations (JAX-RS) - 2",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "```java\n  @GET\n  @Path(\"/{username}\")\n  @ApiOperation(value = \"Get user by user name\",\n    response = User.class,\n    position = 0)\n  @ApiResponses(value = {\n      @ApiResponse(code = 400, message = \"Invalid username supplied\"),\n      @ApiResponse(code = 404, message = \"User not found\") })\n  public Response getUserByName(\n      @ApiParam(value = \"The name that needs to be fetched. Use user1 for testing. \", required = true) @PathParam(\"username\") String username)\n    throws ApiException {\n    User user = userData.findUserByName(username);\n    if (null != user) {\n      return Response.ok().entity(user).build();\n    } else {\n      throw new NotFoundException(404, \"User not found\");\n    }\n  }\n```"
+    }
+  ]
+}

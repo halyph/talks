@@ -1,0 +1,9 @@
+{
+  "title": "Swagger Annotations (JAX-RS) - 1 ",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "```java\n@Path(\"/user\")\n@Api(value=\"/user\", description = \"Operations about user\")\n@Produces({\"application/json\", \"application/xml\"})\n\npublic class UserResource {\n  static UserData userData = new UserData();\n...\n}  \n```"
+    }
+  ]
+}

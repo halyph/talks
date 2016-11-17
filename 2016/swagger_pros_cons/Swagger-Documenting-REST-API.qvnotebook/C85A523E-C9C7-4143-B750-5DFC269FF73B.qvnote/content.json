@@ -1,0 +1,9 @@
+{
+  "title": "API Documentation Approaches ",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "# Top-Down (API First)\n- Write API Doc first\n- Generate code from docs\n\n\n# Bottom-Up\n- Write code first\n- Generate docs from code"
+    }
+  ]
+}

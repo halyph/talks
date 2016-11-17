@@ -1,0 +1,9 @@
+{
+  "title": "Swagger UI vs. ReDoc",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "|      \t| Swagger                             \t| ReDoc                                                  \t|\n|------\t|-------------------------------------\t|--------------------------------------------------------\t|\n| Pros \t| \"Official\" and well known           \t| UI is beautiful and Model’s documentation easy to read \t|\n| Cons \t| Model’s documentation is unreadable \t| 3d party tool                                          \t|\n\n\n# Both\n\n* Can render Swagger spec (json/yaml)\n* Can be customized (via JS/HTML/CSS)\n* Can render Markdown\n\n"
+    }
+  ]
+}

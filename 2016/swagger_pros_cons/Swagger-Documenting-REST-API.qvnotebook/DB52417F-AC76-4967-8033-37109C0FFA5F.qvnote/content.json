@@ -1,0 +1,9 @@
+{
+  "title": "Tutorial - Writing OpenAPI (Swagger) Specification by Arnaud Lauret",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "* Part 1: [Introduction](http://apihandyman.io/writing-openapi-swagger-specification-tutorial-part-1-introduction/)\n* Part 2: [The basics](http://apihandyman.io/writing-openapi-swagger-specification-tutorial-part-2-the-basics/)\n* Part 3: [Simplifying specification file](http://apihandyman.io/writing-openapi-swagger-specification-tutorial-part-3-simplifying-specification-file/)\n* Part 4: [Advanced data modeling](http://apihandyman.io/writing-openapi-swagger-specification-tutorial-part-4-advanced-data-modeling)\n* Part 5: [Advanced input and output modeling](http://apihandyman.io/writing-openapi-swagger-specification-tutorial-part-5-advanced-input-and-output-modeling/)\n* Part 6: [Defining security](http://apihandyman.io/writing-openapi-swagger-specification-tutorial-part-6-defining-security)\n* Part 7: [Documentation](http://apihandyman.io/writing-openapi-swagger-specification-tutorial-part-7-documentation/)\n* Part 8: [Splitting specification file](http://apihandyman.io/writing-openapi-swagger-specification-tutorial-part-8-splitting-specification-file/)"
+    }
+  ]
+}

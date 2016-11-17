@@ -1,0 +1,9 @@
+{
+  "title": "Swagger Annotations (JAX-RS) - 4",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "```java\nimport com.fasterxml.jackson.annotation.JsonAutoDetect;\nimport io.swagger.annotations.ApiModel;\nimport io.swagger.annotations.ApiModelProperty;\n\n@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY, getterVisibility = JsonAutoDetect.Visibility.NONE, setterVisibility = JsonAutoDetect.Visibility.NONE)\n@ApiModel(value=\"metadata\", description=\"Sample model for the documentation\")\npublic class Metadata {\n\n    @ApiModelProperty(value = \"Used language\", required = true, example = \"en\")\n    String language;\n\n    @ApiModelProperty(value = \"API call transaction ID\", required = true, example = \"13739148009334525\")\n    String transaction_id;\n\n    @ApiModelProperty(value = \"API version number\", example = \"2\")\n    String version;\n\n    @ApiModelProperty(value = \"Unit of measure\", required = true, allowableValues = \"e, m, h, s\", example = \"m\")\n    String units;\n\n    @ApiModelProperty(value = \"Absolute expiration time and used to implement a common, system wide method of data and cache expiration.\",\n                      required = true,\n                      example = \"1373914800\")\n    long expire_time_gmt;\n\n    @ApiModelProperty(value = \"Response status code\",\n                        required = true,\n                        example = \"200\")\n    int status_code;\n}\n```"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "title": "Swagger Specification",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "* JSON/YAML to specify metadata\n* JSON/YAML to specify API structure\n* JSON schema for the model specification\n* Machine readable\n* Language Agnostic"
+    }
+  ]
+}

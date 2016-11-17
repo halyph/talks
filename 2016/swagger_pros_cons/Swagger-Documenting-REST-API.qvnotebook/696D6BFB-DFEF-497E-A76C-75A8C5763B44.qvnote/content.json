@@ -1,0 +1,9 @@
+{
+  "title": "Swagger Codegen",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "| API Clients         | Server Stubs     |\n|:---------------------|:------------------|\n| ActionScript        | C# ASP.NET5      |\n| C++                 | Go Server        |\n| C#                  | Haskell Servant  |\n| Clojure             | Java Spring Boot |\n| Dart                | Java Spring MVC  |\n| Groovy              | Java JAX-RS      |\n| Go                  | NancyFX          |\n| Java                | NodeJS           |\n| Java (Spring Cloud) | PHP Lumen        |\n| NodeJS/Javascript   | PHP Silex        |\n| ObjC                | PHP Slim         |\n| Perl                | Python Flask     |\n| PHP                 | Ruby Sinatra     |\n| Python              | Scala Scalatra   |\n| Ruby                | -                |\n| Scala               | -                |\n| Swift               | -                |"
+    }
+  ]
+}

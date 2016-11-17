@@ -1,0 +1,9 @@
+{
+  "title": "Disclamer",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "* It’s not about REST API Design\n* Share Swagger experience and general \"taste\" of this product\n* Discuss *Pros & Cons*\n* Provide useful references and resources for further API Documentation activities"
+    }
+  ]
+}

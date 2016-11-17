@@ -1,0 +1,9 @@
+{
+  "title": "Run Swagger UI Locally",
+  "cells": [
+    {
+      "type": "markdown",
+      "data": "# Running with Docker\n```bash\ndocker run -d --name swagguer-ui -p 8888:8888 sjeandeaux/docker-swagger-ui\n```\n\n# Run from dist folder\n* With Node, globally install package http-server `npm install -g http-server`\n* Change directories to where my.json is located, and run the command `http-server --cors` (CORS has to be enabled for this to work)\n* Open swagger ui (i.e. `dist/index.html`)\n* Type `http://localhost:8080/my.json` in input field and click \"Explore\"\n\n\n### References\n- [Github repo](https://github.com/swagger-api/swagger-ui)\n  - [Github Swagger UI Releases](https://github.com/swagger-api/swagger-ui/releases) \n- [Swagger UI](http://swagger.io/swagger-ui/) \n  - Demo http://petstore.swagger.io/"
+    }
+  ]
+}
