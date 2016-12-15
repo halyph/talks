@@ -201,6 +201,24 @@ varVariable = 44
 
 ---
 
+# Case Classes
+
+```
+	
+case class Person(firstName: String, lastName: String)
+ 
+val me = Person("John", "Dou")
+val first = me.firstName
+val last = me.lastName
+ 
+if (me == Person(first, last)) {
+  println("Found myself!")
+  println(me)
+}
+```
+
+---
+
 # Imports
 
 -   Wildcard imports use the Scala wildcard symbol:
@@ -479,6 +497,7 @@ The last two lines of this program are equivalent to the following code where al
 val x: MyPair[Int, String] = MyPair[Int, String](1, "scala")
 val y: Int = id[Int](1)
 ```
+
 ---
 
 # Referece
