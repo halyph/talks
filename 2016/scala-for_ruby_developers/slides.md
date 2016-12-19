@@ -14,7 +14,11 @@ class: center, middle, inverse
 
 - I'm seasonal Ruby developer (I.e. use it occasionally)
 
-- This talks is not about Ruby vs Scala
+- I use Java and JVM. I know Java language weaknesses and accept critics  
+
+- This talks is not about _Ruby_ vs _Scala_
+
+- This talk is about opportunities 	
 
 - **Aim of this talk is to motivate You to move outside**
 
@@ -24,13 +28,13 @@ class: center, middle, inverse
 
 # Why Should we Look  Around?
 
-## Ruby is so awesome, isn't it? 
+## Ruby is so awesome, isn't it?
 
 ---
 
 # [Who left Ruby Community?](http://halyph.com/blog/2016/11/27/who-left-ruby-community.html)
 
-| Name            | Info                                                                            | Ruby Community                      | Alt/New Community                                         |
+| Name            | Info                                                                            | Ruby Community                      | Alt/New Community                                     |
 |-----------------|---------------------------------------------------------------------------------|-------------------------------------|-------------------------------------------------------|
 | Yehuda Katz     | [github](https://github.com/wycats), [site](http://yehudakatz.com/)             | Merb, Ruby on Rails, Bundler, Thor        | Rust                                            |
 | Steve Klabnik   | [github](https://github.com/steveklabnik), [site](http://www.steveklabnik.com/) | Ruby on Rails                       | Rust                                                  |
@@ -48,7 +52,7 @@ class: center, middle, inverse
 
 ---
 
-# People are Moving to 
+# People are Moving to
 
 - [Elixir](http://elixir-lang.org/) and [Phoenix Framework](http://www.phoenixframework.org/)
 
@@ -69,6 +73,8 @@ class: center, middle, inverse
 - DevOps tools: [Chef](https://www.chef.io/) or [Puppet](https://puppet.com/)
 
 - Penetration testing: [Metasploit](https://www.metasploit.com/)
+
+- [Asciidoctor](http://asciidoctor.org/)
 
 
 ## .right[ _There is no diversity_]
@@ -96,12 +102,18 @@ class: center, middle, inverse
 - MRI domination :-(
   - it is slow
   - MRI on Windows suck
-  - No JIT compilation
+  - [No JIT compilation](http://engineering.appfolio.com/appfolio-engineering/2015/11/18/ruby-3x3)
   - Ruby core library :-(
-  
+
+- Rubinius, JRuby 
+
+--
+
 # Documentation
 
-- Ruby Documentaion just suck: http://ruby-doc.org/
+- Ruby Documentation just suck: http://ruby-doc.org/
+
+--
 
 ## Compare with
 
@@ -114,16 +126,19 @@ class: center, middle, inverse
 
 # Ruby Language - Bad Parts
 
- - [Ruby: The Bad Parts by _Bozhidar Batsov_](the-bad-parts-by-bozhidar_batsov/README.md)
- - [Ruby and Rails: The Bad Parts by _Volodymyr Melnyk_](ruby-and-rails-the-bad-parts-by-volodymyr-melnyk/README.md)
- 
- 
+ - [Ruby: The Bad Parts by _Bozhidar Batsov_](https://github.com/halyph/digging-prog-langs/blob/master/notes/the-bad-parts-by-bozhidar_batsov/README.md)
+ - [Ruby and Rails: The Bad Parts by _Volodymyr Melnyk_](https://github.com/halyph/digging-prog-langs/blob/master/notes/ruby-and-rails-the-bad-parts-by-volodymyr-melnyk/README.md)
+
+
 ---
 
 ## My Favorites
 
-- `load` vs `require` vs `include` vs `extend` vs `prepend`
+- `load` _vs_ `require` _vs_ `include` _vs_ `extend` _vs_ `prepend`
+
 - Ruby Nested Modules (_see_ [Creating Namespaces In Ruby For Fun And Practice](http://justinherrick.com/blog/creating-namespaces-in-ruby-for-fun-and-practice/))
+
+- Import namespace `include <smth>` might cause conflicts (suggested to use _aliases_)
 
 .left-column[
 ```ruby
@@ -177,10 +192,6 @@ proc.call(1,2,3)               # prints out 1 and forgets about the extra argume
 
 ```
 
-
----
-
-
 ---
 
 class: center, middle, inverse
@@ -219,7 +230,7 @@ class: center, middle, inverse
 - Verizon
 - Airbnb
 - Zalando
-- SoundCloud 
+- SoundCloud
 - Databricks
 - Morgan Stanley
 - Walmart Canada
@@ -230,7 +241,7 @@ class: center, middle, inverse
 
 --
 
-- Targeted for: JVM, JS and Native
+- Targeted for: **JVM**, JS and Native (~~.Net/CLR~~)
 
 --
 
@@ -250,14 +261,14 @@ class: center, middle, inverse
 
 --
 
-- Everething is an expression
+- Everything is an expression
 
 ---
 
 class: center, middle, inverse
 
 
-# DSLs in Scala
+# Samples in Scala
 
 ---
 
@@ -297,7 +308,7 @@ object Lunar extends Baysick {
 
 ---
 
-## [ScalaTest](http://www.scalatest.org/user_guide/selecting_a_style) 
+## [ScalaTest](http://www.scalatest.org/user_guide/selecting_a_style)
 
 ```
 import org.scalatest.FunSpec
@@ -389,35 +400,98 @@ target('cat ) {
 }
 ```
 
-
----
-.left-column[
-
- - Big numbers are actually usable:
-   ```
-   val x: BigInt = 1234567890
-   x * x * x // Yields 1881676371789154860897069000
-   ```
-]
-
-.right-column[
-
-- Infix notation:
-  ```
-  1 to 10 // Same as 1.to(10)
-  1 + 10 // Same as 1.+(10)
-  ```
-
-]
-
-
-
-
-
 ---
 
-# Referece
+## Scala as Scripting Language
 
+```
+> cat Blog.sc
+import $ivy.`com.lihaoyi::scalatags:0.6.0`
+import $ivy.`com.atlassian.commonmark:commonmark:0.5.1`
+
+import ammonite.ops._
+
+val postFiles = ls! cwd/'posts
+val unsortedPosts = for(path <- postFiles) yield {
+  val Array(prefix, suffix) = path.last.split(" - ")
+  (prefix.toInt, suffix, path)
+}
+def mdNameToHtml(name: String) = {
+  name.stripSuffix(".md").replace(" ", "-").toLowerCase + ".html"
+}
+val sortedPosts = unsortedPosts.sortBy(_._1)
+
+val bootstrapCss = {
+  import scalatags.Text.all._
+  link(
+    rel := "stylesheet",
+    href := "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+  )
+}
+```
+
+---
+
+### Scala as Scripting Language (cont. 2)
+
+
+```
+println("POSTS")
+sortedPosts.foreach(println)
+for((_, suffix, path) <- sortedPosts) {
+  import org.commonmark.html.HtmlRenderer
+  import org.commonmark.node._
+  import org.commonmark.parser.Parser
+
+  val parser = Parser.builder().build()
+  val document = parser.parse(read! path)
+  val renderer = HtmlRenderer.builder().build()
+  val output = renderer.render(document)
+  import scalatags.Text.all._
+  write(
+    cwd/'blog/mdNameToHtml(suffix),
+    html(
+      head(bootstrapCss),
+      body(
+        h1(a("Haoyi's Blog", href := "../index.html")),
+        h1(suffix.stripSuffix(".md")),
+        raw(output)
+      )
+    ).render
+  )
+}
+
+```
+
+---
+
+### Scala as Scripting Language (cont. 3)
+
+
+```
+val HTML = {
+  import scalatags.Text.all._
+
+  html(
+    head(bootstrapCss),
+    body(
+      h1("Haoyi's Blog"),
+      for((_, suffix, _) <- sortedPosts)
+      yield h2(a(suffix, href := ("blog/" + mdNameToHtml(suffix))))
+    )
+  ).render
+}
+
+write(cwd/"index.html", HTML)
+```
+
+---
+
+# Reference 
+- [Scala Scripting and the 15 Minute Blog Engine](http://www.lihaoyi.com/post/ScalaScriptingandthe15MinuteBlogEngine.html)
+- [Video: Marconi Lanna - Elegant and Powerful Scala One-liners](https://www.youtube.com/watch?v=V08s4AfVQY4)
+- [Scala for Ruby Developers](https://github.com/halyph/digging-prog-langs/blob/master/notes/scala-for-ruby-developers/README.md)
+- [10 Scala One Liners to Impress Your Friends](https://gist.github.com/mkaz/d11f8f08719d6d27bab5)
 - [Wikipedia](http://bit.ly/2f8xVC6)
 - [A Tour of Scala](http://docs.scala-lang.org/tutorials/)
-- [7 Scala features that surprise Java developers](http://www.jesperdj.com/2015/11/08/7-scala-features-that-surprise-java-developers/)
+- [Scala Ecosystem](https://github.com/halyph/digging-prog-langs/blob/master/slides/scala-for-java-developers/ecosystem.md)
