@@ -402,7 +402,7 @@ target('cat ) {
 
 ---
 
-## Scala as Scripting Language
+## [Scala as Scripting Language](http://www.lihaoyi.com/post/ScalaScriptingandthe15MinuteBlogEngine.html)
 
 ```
 > cat Blog.sc
