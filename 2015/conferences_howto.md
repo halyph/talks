@@ -51,6 +51,8 @@
     - JavaDay Lviv (June 12, 2016)
     - JDay Lviv (September 3rd, 2016)
     - AI Ukrane Kharkiv (October 8-9, 2016)
+- **2018**
+    - Scala Days Berlin (15-17 May, 2018) 
 
 
 *Note:* I don't count local conferences like **IT Event** or **IT Rally**. 
