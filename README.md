@@ -6,3 +6,4 @@
 * **November 17, 2016** Engineering Communities - [Swagger - Documenting REST API (Pros & Cons)](https://halyph.github.io/talks/2016/swagger-slides/)
 * **December 15, 2016** Engineering Communities - [Nifty Scala Features](https://halyph.github.io/talks/2016/nifty_scala_features)
 * **December 19, 2016** Engineering Communities - [Scala for Ruby Developers](https://halyph.github.io/talks/2016/scala_for_ruby_developers)
+* **December 08, 2016** Internal training - [Scala for Java Developers](https://halyph.github.io/talks/2016/scala-for-java-developers/)
